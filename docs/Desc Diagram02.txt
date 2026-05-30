@@ -1,0 +1,3 @@
+La plataforma Ituran Vehicle Subscription Platform fue desarrollada utilizando una arquitectura desacoplada basada en servicios, permitiendo separar la recepción de eventos, el procesamiento de negocio y la visualización de información.
+
+El objetivo principal es recibir eventos provenientes de Ituran mediante Webhooks, almacenar la información de forma segura, procesarla de manera asíncrona y posteriormente integrarla con sistemas ERP y CRM.

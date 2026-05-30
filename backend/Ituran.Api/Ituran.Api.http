@@ -1,0 +1,6 @@
+@Ituran.Api_HostAddress = http://localhost:5005
+
+GET {{Ituran.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

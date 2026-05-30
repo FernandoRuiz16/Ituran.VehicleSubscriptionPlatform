@@ -1,0 +1,14 @@
+.vs/
+bin/
+obj/
+node_modules/
+.angular/
+dist/
+publish/
+.idea/
+*.user
+*.suo
+*.log
+.env
+Thumbs.db
+Desktop.ini

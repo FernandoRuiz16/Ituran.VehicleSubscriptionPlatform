@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="Ituran.Api/Ituran.Api.csproj" />
+  <Project Path="Ituran.Application/Ituran.Application.csproj" />
+  <Project Path="Ituran.Domain/Ituran.Domain.csproj" />
+  <Project Path="Ituran.Infrastructure/Ituran.Infrastructure.csproj" />
+  <Project Path="Ituran.Worker/Ituran.Worker.csproj" />
+</Solution>

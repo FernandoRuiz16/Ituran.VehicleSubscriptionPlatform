@@ -1,0 +1,4 @@
+La arquitectura desacopla la recepción del webhook del procesamiento pesado. 
+La API recibe el JSON, valida y guarda la información en SQL Server con idempotencia. 
+Después, un Worker procesa cada registro hacia ERP y CRM, registrando logs y estados. 
+Angular consume la API para mostrar dashboard, suscripciones, trazabilidad y analítica.
