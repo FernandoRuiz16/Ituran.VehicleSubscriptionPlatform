@@ -15,7 +15,11 @@ public class VehicleSubscriptionProcessorService
         _webhookRepository = webhookRepository;
         _processingLogRepository = processingLogRepository;
     }
-
+    /// <summary>
+    /// Processes pending vehicle subscriptions asynchronously.
+    /// Simulates ERP contract creation and CRM mobile user creation,
+    /// updating the item status and writing processing logs for traceability.
+    /// </summary>
     public async Task ProcessPendingAsync()
     {
         var items = await _webhookRepository.GetPendingItemsAsync(10);

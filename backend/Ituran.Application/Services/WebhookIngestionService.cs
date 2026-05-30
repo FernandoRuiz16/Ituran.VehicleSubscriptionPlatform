@@ -19,7 +19,10 @@ public class WebhookIngestionService
         _webhookRepository = webhookRepository;
         _processingLogRepository = processingLogRepository;
     }
-
+    /// <summary>
+    /// Persists the webhook batch and its individual items using an Inbox Pattern.
+    /// Each item receives an idempotency key to avoid duplicate processing.
+    /// </summary>
     public async Task<object> ReceiveAsync(
         List<VehicleSubscriptionWebhookRequest> request,
         string? signature)
@@ -116,7 +119,11 @@ public class WebhookIngestionService
         //    status = "Accepted"
         //};
     }
-
+    /// <summary>
+    /// Builds a deterministic hash based on business fields.
+    /// This prevents creating duplicated ERP contracts or CRM users
+    /// when the same webhook is received more than once.
+    /// </summary>
     private static string BuildIdempotencyKey(VehicleSubscriptionWebhookRequest item)
     {
         var raw = $"{item.Vin}|{item.Dispositivo}|{item.EventoId}|{item.Orden}|{item.FechaEnvio:O}";

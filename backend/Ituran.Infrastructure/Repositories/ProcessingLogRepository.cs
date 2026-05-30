@@ -12,6 +12,11 @@ public class ProcessingLogRepository : IProcessingLogRepository
     {
         _connectionFactory = connectionFactory;
     }
+    /// <summary>
+    /// Stores functional trace logs for each processing step.
+    /// These logs are displayed in the platform to support auditing and troubleshooting.
+    /// </summary>
+    /// 
 
     public async Task CreateAsync(ProcessingLog log)
     {

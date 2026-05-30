@@ -231,4 +231,4 @@ Cuando se recibe una nueva suscripción:
 
 Luis Fernando Ruiz
 
-Backend Developer (.NET)
+Developer 

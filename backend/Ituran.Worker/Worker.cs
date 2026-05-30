@@ -14,7 +14,10 @@ public class Worker : BackgroundService
         _scopeFactory = scopeFactory;
         _logger = logger;
     }
-
+    /// <summary>
+    /// Background loop that periodically processes pending vehicle subscription records.
+    /// This prevents the webhook endpoint from blocking during long ERP/CRM operations.
+    /// </summary>
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
         _logger.LogInformation("Vehicle Subscription Worker started.");

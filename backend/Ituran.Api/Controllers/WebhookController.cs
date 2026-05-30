@@ -14,7 +14,11 @@ public class WebhookController : ControllerBase
     {
         _webhookIngestionService = webhookIngestionService;
     }
-
+    /// <summary>
+    /// Receives vehicle subscription webhook events from external clients.
+    /// The endpoint persists the incoming payload and returns 202 Accepted quickly,
+    /// avoiding long processing inside the HTTP request.
+    /// </summary>
     [HttpPost("vehicle-subscriptions")]
     public async Task<IActionResult> ReceiveVehicleSubscriptions(
         [FromBody] List<VehicleSubscriptionWebhookRequest> request)

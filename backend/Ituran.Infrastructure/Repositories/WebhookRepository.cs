@@ -109,7 +109,10 @@ VALUES
         using var connection = _connectionFactory.CreateConnection();
         await connection.ExecuteAsync(sql, items);
     }
-
+    /// <summary>
+    /// Checks if an item was already received or processed using its idempotency key.
+    /// Used to safely handle duplicated webhook deliveries.
+    /// </summary>
     public async Task<bool> ExistsItemByIdempotencyKeyAsync(string idempotencyKey)
     {
         const string sql = @"
@@ -129,6 +132,16 @@ END;";
             IdempotencyKey = idempotencyKey
         });
     }
+
+
+
+    /// <summary>
+    /// Gets pending items for the background worker.
+    /// Only records waiting for ERP processing or retry are selected.
+    /// </summary>
+    /// 
+
+
     public async Task<List<WebhookItem>> GetPendingItemsAsync(int take)
     {
         const string sql = @"
@@ -236,7 +249,10 @@ WHERE Id = @ItemId;";
             CrmUserId = crmUserId
         });
     }
-
+    /// <summary>
+    /// Increments retry count and moves the item to Retrying or DeadLetter
+    /// depending on the configured maximum attempts.
+    /// </summary>
     public async Task MarkFailedAsync(int itemId, string error)
     {
         const string sql = @"
