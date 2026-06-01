@@ -1,0 +1,36 @@
+<div class="page-header">
+  <h1>Vehicle Subscriptions</h1>
+  <p>Webhook records received and processed through ERP and CRM.</p>
+</div>
+
+<div class="table-card">
+  <table>
+    <thead>
+      <tr>
+        <th>VIN</th>
+        <th>Plate</th>
+        <th>Device</th>
+        <th>Event</th>
+        <th>Email</th>
+        <th>Status</th>
+        <th>ERP Contract</th>
+        <th>CRM User</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      @for (item of subscriptions; track item.Id) {
+        <tr>
+          <td>{{ item.Vin }}</td>
+          <td>{{ item.Placa }}</td>
+          <td>{{ item.Dispositivo }}</td>
+          <td>{{ item.Evento }}</td>
+          <td>{{ item.Correo }}</td>
+          <td><span class="status">{{ item.Status }}</span></td>
+          <td>{{ item.ErpContractId }}</td>
+          <td>{{ item.CrmUserId }}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>

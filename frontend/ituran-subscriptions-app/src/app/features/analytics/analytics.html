@@ -1,0 +1,41 @@
+<div class="page-header">
+  <h1>Analytics</h1>
+  <p>Operational metrics for webhook ingestion, ERP contracts and CRM users.</p>
+</div>
+
+<div class="analytics-grid">
+  <div class="metric-card">
+    <label>Total Batches</label>
+    <strong>{{ summary?.totalBatches || 0 }}</strong>
+  </div>
+
+  <div class="metric-card">
+    <label>Total Items</label>
+    <strong>{{ summary?.totalItems || 0 }}</strong>
+  </div>
+
+  <div class="metric-card success">
+    <label>Completed Items</label>
+    <strong>{{ summary?.completedItems || 0 }}</strong>
+  </div>
+
+  <div class="metric-card danger">
+    <label>Failed Items</label>
+    <strong>{{ summary?.failedItems || 0 }}</strong>
+  </div>
+
+  <div class="metric-card">
+    <label>Processing Logs</label>
+    <strong>{{ summary?.logsCount || 0 }}</strong>
+  </div>
+
+  <div class="metric-card info">
+    <label>ERP Steps</label>
+    <strong>{{ summary?.erpSteps || 0 }}</strong>
+  </div>
+
+  <div class="metric-card info">
+    <label>CRM Steps</label>
+    <strong>{{ summary?.crmSteps || 0 }}</strong>
+  </div>
+</div>

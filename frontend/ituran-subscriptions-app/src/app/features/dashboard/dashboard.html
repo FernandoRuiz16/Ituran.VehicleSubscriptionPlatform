@@ -1,0 +1,37 @@
+<div class="page-header">
+  <h1>Dashboard</h1>
+  <p></p>
+</div>
+
+
+<div class="cards">
+  <div class="card">
+    <label>Total Items</label>
+    <strong>{{ summary?.totalItems ?? 0 }}</strong>
+  </div>
+
+  <div class="card success">
+    <label>Completed</label>
+    <strong>{{ summary?.completed ?? 0 }}</strong>
+  </div>
+
+  <div class="card warning">
+    <label>Pending</label>
+    <strong>{{ summary?.pending ?? 0 }}</strong>
+  </div>
+
+  <div class="card info">
+    <label>Processing</label>
+    <strong>{{ summary?.processing ?? 0 }}</strong>
+  </div>
+
+  <div class="card danger">
+    <label>Failed</label>
+    <strong>{{ summary?.failed ?? 0 }}</strong>
+  </div>
+
+  <div class="card">
+    <label>Batches</label>
+    <strong>{{ summary?.totalBatches ?? 0 }}</strong>
+  </div>
+</div>

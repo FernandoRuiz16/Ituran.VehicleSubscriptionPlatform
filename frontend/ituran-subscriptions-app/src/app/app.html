@@ -1,0 +1,58 @@
+<div class="app-shell" [class.sidebar-collapsed]="collapsed">
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-icon">I</div>
+
+      <div class="brand-text">
+        <h1>Ituran</h1>
+        <p>Vehicle Subscriptions</p>
+      </div>
+
+      <button class="collapse-btn" type="button" (click)="toggleSidebar()">
+        ☰
+      </button>
+    </div>
+
+    <nav class="menu">
+          <a routerLink="/dashboard" routerLinkActive="active">
+              <i class="fa-solid fa-chart-line"></i>
+              <small>Dashboard</small>
+          </a>
+
+          <a routerLink="/subscriptions" routerLinkActive="active">
+              <i class="fa-solid fa-car-side"></i>
+              <small>Subscriptions</small>
+          </a>
+
+          <a routerLink="/analytics" routerLinkActive="active">
+              <i class="fa-solid fa-chart-pie"></i>
+              <small>Analytics</small>
+          </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <span>Webhook Platform</span>
+      <small>v1.0</small>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <header class="topbar">
+      <div>
+        <h2>Vehicle Subscription Platform</h2>
+        <p>Webhook · ERP · CRM · Analytics</p>
+      </div>
+
+      <div class="user-pill">
+        <span></span>
+        Admin
+      </div>
+    </header>
+
+    <section class="content-card">
+      <router-outlet></router-outlet>
+    </section>
+  </main>
+</div>
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
